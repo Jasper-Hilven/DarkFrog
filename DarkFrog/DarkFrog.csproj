@@ -54,7 +54,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Id\BoolId.cs" />
-    <Compile Include="Id\CharId.cs" />
+    <Compile Include="Id\StringId.cs" />
     <Compile Include="Id\IId.cs" />
     <Compile Include="Id\IntId.cs" />
     <Compile Include="Id\RefId.cs" />
@@ -88,6 +88,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Execution\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

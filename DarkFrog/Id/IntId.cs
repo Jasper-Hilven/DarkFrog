@@ -5,20 +5,23 @@ namespace DarkFrog.Id
 {
   public class IntId : IId
   {
-    public static Dictionary<int, IntId> StatConsts = new Dictionary<int, IntId>();
-    
-    private IntId()
+    private static IntId zero = new IntId(0);
+    private static IntId one = new IntId(1);
+    private int value;
+
+
+    private IntId(int value)
     {
+      this.value = value;
     }
 
     public static IntId CreateId(int number)
     {
-      IntId ret;
-      if (StatConsts.TryGetValue(number, out ret))
-        return ret;
-      ret = new IntId();
-      StatConsts.Add(number,ret);
-      return ret;
+      if (number == 0) 
+        return zero;
+      if (number == 1) 
+      return one;
+      return new IntId(number);
     }
 
     public bool ContainsProperty(IId property)

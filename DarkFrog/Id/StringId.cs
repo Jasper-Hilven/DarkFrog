@@ -3,17 +3,18 @@ using System.Collections.Generic;
 
 namespace DarkFrog.Id
 {
-  public class CharId:IId
+  public class StringId:IId
   {
-    private static Dictionary<char, CharId> StatConsts = new Dictionary<char, CharId>();
+    private readonly string value;
 
-    public static CharId CreateCharId(char value)
+    private StringId(string value)
     {
-      CharId ret;
-      if (StatConsts.TryGetValue(value, out ret))
-        return ret;
-      ret = new CharId();
-      StatConsts.Add(value,ret);
+      this.value = value;
+    }
+
+    public static StringId CreateStringId(string value)
+    {
+      var ret = new StringId(value);
       return ret;
     }
 
@@ -37,5 +38,12 @@ namespace DarkFrog.Id
       return false;
     }
 
+    public override bool Equals(object obj)
+    {
+      var other = obj as StringId;
+      if (other == null)
+        return false;
+      return other.value == value;
+    }
   }
 }
