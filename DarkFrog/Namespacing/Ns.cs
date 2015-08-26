@@ -5,7 +5,7 @@ using DarkFrog.Id;
 
 namespace DarkFrog.Namespacing
 {
-  class Ns : INameContainer
+  public class Ns : INameContainer
   {
     private readonly Environment environment;
 
@@ -31,8 +31,6 @@ namespace DarkFrog.Namespacing
     {
       environment.NameToId.Clear();
       environment.IdToName.Clear();
-      AddIId(root, "Root");
-      AddIId(nsChildren, "NsChildren");
       LoadNameSpace(this);
       LoadNameSpace(new DfList());
       LoadNameSpace(new DfSet());

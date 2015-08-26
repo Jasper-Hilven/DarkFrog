@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,25 +11,29 @@ using DarkFrog.Namespacing;
 namespace DarkFrog
 {
   //Contains all variables and the loading and disloading of it
-  class Environment
+  public class Environment
   {
     public readonly IdStreamer Streamer;
     public bool Loaded { get; private set; }
-    public Namespacing.Ns MyNamespacing;
+    public Ns MyNamespacing;
     public Dictionary<IId, string> IdToName { get; private set; }
     public Dictionary<string,IId> NameToId{ get; private set; }
 
  
-    public Environment(IdStreamer streamer)
+    public Environment()
     {
-      this.MyNamespacing = new Ns(this);
-      Streamer = streamer;
+      NameToId = new Dictionary<string, IId>();
+      IdToName = new Dictionary<IId, string>();
+      MyNamespacing = new Ns(this);
+      MyNamespacing.LoadNamespace();
+      Streamer = new IdStreamer(this);
+      Loaded = true;
     }
 
     public void LoadEnvironment(string path)
     {
       if(Loaded)
-        throw new Exception();
+        UnLoadEnvironment();
       MyNamespacing.LoadNamespace();
       throw new NotImplementedException();
       
@@ -37,20 +42,23 @@ namespace DarkFrog
 
     public void SaveEnvironment(string path)
     {
-      if(!Loaded)
-        throw new Exception();
-      throw new NotImplementedException();
+      File.WriteAllLines(path,Streamer.StreamAllIIds());
     }
 
     public void UnLoadEnvironment()
     {
-      throw new NotImplementedException();
       Loaded = false;
+      NameToId = new Dictionary<string, IId>();
+      IdToName = new Dictionary<IId, string>();
+      MyNamespacing = new Ns(this);
+
     }
 
     public IId GetRoot()
     {
-      throw new NotImplementedException();
+      if(!Loaded)
+        throw new Exception();
+      return MyNamespacing.Root();
     }
   }
 }

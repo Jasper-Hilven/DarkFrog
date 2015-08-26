@@ -59,7 +59,6 @@
     <Compile Include="Id\IntId.cs" />
     <Compile Include="Id\RefId.cs" />
     <Compile Include="IIdStreamer.cs" />
-    <Compile Include="Listing.cs" />
     <Compile Include="Namespacing\INameContainer.cs" />
     <Compile Include="Namespacing\Ns.cs" />
     <Compile Include="Program.cs" />

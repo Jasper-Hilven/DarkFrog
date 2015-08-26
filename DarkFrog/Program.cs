@@ -14,6 +14,8 @@ namespace DarkFrog
     [STAThread]
     static void Main()
     {
+      Environment e = new Environment();
+      e.SaveEnvironment(@"C:\Users\Jasper\Desktop\fs.txt");
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
       Application.Run(new Form1());

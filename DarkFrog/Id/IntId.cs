@@ -24,6 +24,16 @@ namespace DarkFrog.Id
       return new IntId(number);
     }
 
+    public IEnumerable<IId> GetProperties()
+    {
+      return new List<IId>();
+    }
+
+    public IEnumerable<IId> GetPropertiesAndValues()
+    {
+      return new List<IId>();
+    }
+
     public bool ContainsProperty(IId property)
     {
       return false;
@@ -39,9 +49,23 @@ namespace DarkFrog.Id
       throw new SystemException();
     }
 
+    public void RemoveProperty(IId property)
+    {
+    }
+
     public bool IsRefIId()
     {
       return false;
+    }
+
+    public string GetStreamDescription()
+    {
+      return "I" + value;
+    }
+
+    public string GetFullPropertyDescription()
+    {
+      return GetStreamDescription();
     }
   }
 }

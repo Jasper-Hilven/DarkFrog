@@ -1,4 +1,7 @@
-﻿namespace DarkFrog.Id
+﻿using System;
+using System.Collections.Generic;
+
+namespace DarkFrog.Id
 {
   public class BoolId : IId
   {
@@ -16,6 +19,16 @@
       return value ? True : False;
     }
 
+    public IEnumerable<IId> GetProperties()
+    {
+      return new List<IId>();
+    }
+
+    public IEnumerable<IId> GetPropertiesAndValues()
+    {
+      return new List<IId>();
+    }
+
     public bool ContainsProperty(IId property)
     {
       return false;
@@ -23,17 +36,31 @@
 
     public IId GetProperty(IId property)
     {
-      throw new System.Exception();
+      throw new Exception();
     }
 
     public void SetProperty(IId property, IId value)
     {
-      throw new System.Exception();
+      throw new Exception();
+    }
+
+    public void RemoveProperty(IId property)
+    {
     }
 
     public bool IsRefIId()
     {
       return false;
+    }
+
+    public string GetStreamDescription()
+    {
+      return "B" + (value ? "T" : "F");
+    }
+
+    public string GetFullPropertyDescription()
+    {
+      return GetStreamDescription();
     }
   }
 }
