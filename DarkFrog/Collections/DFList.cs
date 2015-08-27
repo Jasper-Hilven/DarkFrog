@@ -4,7 +4,7 @@ using DarkFrog.Namespacing;
 
 namespace DarkFrog.Collections
 {
-  public class DfList : INameContainer
+  public class DfList : IPersistencyNameContainer
   {
     private static readonly RefId listId = new RefId(); public static RefId ListId() { return listId; }
     private static readonly RefId listLength = new RefId(); public static RefId ListLength() { return listLength; }

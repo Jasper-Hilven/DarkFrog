@@ -4,7 +4,7 @@ using DarkFrog.Id;
 
 namespace DarkFrog.Namespacing
 {
-  public interface INameContainer
+  public interface IPersistencyNameContainer
   {
     Dictionary<string, IId> GetIIds();
     string GetPrefix();

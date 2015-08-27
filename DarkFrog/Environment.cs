@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DarkFrog.Id;
 using DarkFrog.Namespacing;
 
@@ -15,17 +11,18 @@ namespace DarkFrog
   {
     public readonly IdStreamer Streamer;
     public bool Loaded { get; private set; }
-    public Ns MyNamespacing;
+    private PersistencyNameStorage persistencyNameStorage;
     public Dictionary<IId, string> IdToName { get; private set; }
     public Dictionary<string,IId> NameToId{ get; private set; }
-
+    private NameSpaceBuilder nameSpaceBuilder;
  
     public Environment()
     {
+      nameSpaceBuilder = new NameSpaceBuilder();
       NameToId = new Dictionary<string, IId>();
       IdToName = new Dictionary<IId, string>();
-      MyNamespacing = new Ns(this);
-      MyNamespacing.LoadNamespace();
+      persistencyNameStorage = new PersistencyNameStorage(this);
+      persistencyNameStorage.LoadStorageNames();
       Streamer = new IdStreamer(this);
       Loaded = true;
     }
@@ -34,7 +31,7 @@ namespace DarkFrog
     {
       if(Loaded)
         UnLoadEnvironment();
-      MyNamespacing.LoadNamespace();
+      persistencyNameStorage.LoadStorageNames();
       throw new NotImplementedException();
       
       Loaded = true;
@@ -50,7 +47,7 @@ namespace DarkFrog
       Loaded = false;
       NameToId = new Dictionary<string, IId>();
       IdToName = new Dictionary<IId, string>();
-      MyNamespacing = new Ns(this);
+      persistencyNameStorage = new PersistencyNameStorage(this);
 
     }
 
@@ -58,7 +55,7 @@ namespace DarkFrog
     {
       if(!Loaded)
         throw new Exception();
-      return MyNamespacing.Root();
+      return persistencyNameStorage.Root();
     }
   }
 }

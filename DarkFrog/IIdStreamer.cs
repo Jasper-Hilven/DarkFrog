@@ -66,8 +66,5 @@ namespace DarkFrog
       environment.NameToId.Add(uniqueName, ret);
       return ret;
     }
-
-
-
   }
 }

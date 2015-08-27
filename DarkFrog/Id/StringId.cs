@@ -18,7 +18,7 @@ namespace DarkFrog.Id
 
     private readonly string value;
 
-    private StringId(string value)
+    public StringId(string value)
     {
       this.value = value;
     }
@@ -65,7 +65,7 @@ namespace DarkFrog.Id
 
     public string GetStreamDescription()
     {
-      return "S" + string.Join("", value.Select(c => ((int)c).ToString("X2")));;
+      return "S" + string.Join("", value.Select(c => ((int)c).ToString("X2")));
     }
 
     public string GetFullPropertyDescription()
