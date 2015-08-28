@@ -37,5 +37,18 @@ namespace DarkFrog.Namespacing
     
     public string GetPrefix() { return "Hierarchy"; }
 
+    public void BuildNameSpace()
+    {
+      var namespacecontainers = new HashSet<INameSpaceContainer>{new DfSet()};
+      foreach (var nameSpaceContainer in namespacecontainers)
+        AddRoot(nameSpaceContainer);
+    }
+
+    public void AddRoot(INameSpaceContainer container)
+    {
+      foreach (var tuple in container.GetHierarchy())
+        AddNameSpaceChild(tuple.Item1,tuple.Item2);
+    }
+
   }
 }

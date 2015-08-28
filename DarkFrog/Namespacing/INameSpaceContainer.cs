@@ -11,6 +11,6 @@ namespace DarkFrog.Namespacing
 {
   interface INameSpaceContainer
   {
-    IEnumerable<Tuple<IId, IId>> GetHierarchy();
+    IEnumerable<Tuple<IId, IId>> GetHierarchy(NameSpaceBuilder builder);
   }
 }

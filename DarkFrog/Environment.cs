@@ -19,6 +19,7 @@ namespace DarkFrog
     public Environment()
     {
       nameSpaceBuilder = new NameSpaceBuilder();
+      nameSpaceBuilder.BuildNameSpace();
       NameToId = new Dictionary<string, IId>();
       IdToName = new Dictionary<IId, string>();
       persistencyNameStorage = new PersistencyNameStorage(this);
@@ -55,7 +56,7 @@ namespace DarkFrog
     {
       if(!Loaded)
         throw new Exception();
-      return persistencyNameStorage.Root();
+      return nameSpaceBuilder.GetRoot();
     }
   }
 }
