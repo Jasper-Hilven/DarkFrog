@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using DarkFrog.Collections;
 using DarkFrog.Id;
 
@@ -46,7 +42,7 @@ namespace DarkFrog.Namespacing
 
     public void AddRoot(INameSpaceContainer container)
     {
-      foreach (var tuple in container.GetHierarchy())
+      foreach (var tuple in container.GetHierarchy(this))
         AddNameSpaceChild(tuple.Item1,tuple.Item2);
     }
 
