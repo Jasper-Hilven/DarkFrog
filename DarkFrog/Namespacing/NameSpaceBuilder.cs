@@ -4,7 +4,7 @@ using DarkFrog.Id;
 
 namespace DarkFrog.Namespacing
 {
-  class NameSpaceBuilder : IPersistencyNameContainer
+  public class NameSpaceBuilder : IPersistencyNameContainer
   {
     private static readonly IId nsChildren = new RefId(); public static IId NsChildren() { return nsChildren; }
 
@@ -15,7 +15,11 @@ namespace DarkFrog.Namespacing
       var set = parentId.GetProperty(nsChildren);
       DfSet.AddToSet(set,childId);
     }
-    
+
+    public NameSpaceBuilder()
+    {
+    }
+
     private readonly IId root = new RefId(); 
     
     public IId GetRoot()

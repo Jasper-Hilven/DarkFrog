@@ -29,7 +29,9 @@ namespace DarkFrog
 
     private void WriteUniqueNames(Dictionary<string, IId> names, List<String> stream)
     {
-      stream.AddRange(names.Select(kvp => string.Join("", kvp.Key.Select(c => ((int) c).ToString("X2"))) + " " + kvp.Value.GetStreamDescription()));
+      stream.AddRange(names.Select(kvp => string.Join("", kvp.Key.Select(c => ((int)c).ToString("X2"))) + " " + kvp.Value.GetStreamDescription()));
+      stream.AddRange(names.Select(kvp => kvp.Key + " " + kvp.Value.GetStreamDescription()));
+      
     }
 
     private void AddIdAndMark(IId target,List<string> acc,IId isStreaming)

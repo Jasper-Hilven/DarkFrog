@@ -31,7 +31,7 @@ namespace DarkFrog.Namespacing
     {
       environment.NameToId.Clear();
       environment.IdToName.Clear();
-      LoadStorageNames(new NameSpaceBuilder());
+      LoadStorageNames(environment.MyNameSpaceBuilder);
       LoadStorageNames(new DfList());
       LoadStorageNames(new DfSet());
       LoadStorageNames(new Naming());

@@ -9,7 +9,7 @@ using DarkFrog.Id;
 
 namespace DarkFrog.Namespacing
 {
-  interface INameSpaceContainer
+  public interface INameSpaceContainer
   {
     IEnumerable<Tuple<IId, IId>> GetHierarchy(NameSpaceBuilder builder);
   }

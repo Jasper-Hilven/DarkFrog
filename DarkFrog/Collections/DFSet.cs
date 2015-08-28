@@ -39,7 +39,7 @@ namespace DarkFrog.Collections
     public static void AddToSet(IId set,IId value)
     {
       var rawId = set.GetProperty(setId);
-      rawId.SetProperty(setProperty,value);
+      rawId.SetProperty(value,setProperty);
     }
 
     public string GetPrefix()
