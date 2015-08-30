@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using DarkFrog.Collections;
+﻿using DarkFrog.Collections;
 using DarkFrog.Id;
 
 namespace DarkFrog.Namespacing
