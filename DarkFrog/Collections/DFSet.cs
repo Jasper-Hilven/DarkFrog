@@ -11,7 +11,7 @@ namespace DarkFrog.Collections
     private static readonly IId setProperty = Naming.GetNamedId("setProperty"); public static IId SetProperty() { return setProperty; }
     private static readonly IId setNs = Naming.GetNamedId("setNs"); public static IId SetNs() { return setProperty; }
 
-    public Dictionary<string, IId> GetIIds()
+    public Dictionary<string, IId> GetPersistencyNamesFromIds()
     {
       return new Dictionary<string, IId>(){{"DfSetId",setId},{"DfSetProperty", setProperty},{"setNs", setNs} };
     }

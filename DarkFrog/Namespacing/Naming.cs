@@ -25,7 +25,7 @@ namespace DarkFrog.Namespacing
       return retId;
     }
 
-    public Dictionary<string, IId> GetIIds()
+    public Dictionary<string, IId> GetPersistencyNamesFromIds()
     {
       return new Dictionary<string, IId>
              {

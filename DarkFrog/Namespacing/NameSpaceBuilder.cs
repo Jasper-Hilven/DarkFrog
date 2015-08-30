@@ -26,7 +26,7 @@ namespace DarkFrog.Namespacing
     {
       return root;
     }
-    public Dictionary<string, IId> GetIIds()
+    public Dictionary<string, IId> GetPersistencyNamesFromIds()
     {
       return new Dictionary<string, IId>
              {
@@ -39,7 +39,7 @@ namespace DarkFrog.Namespacing
 
     public void BuildNameSpace()
     {
-      var namespacecontainers = new HashSet<INameSpaceContainer>{new DfSet(),new DfList()};
+      var namespacecontainers = new HashSet<INameSpaceContainer>{new DfSet(),new DfList(), new Execution.Execution()};
       foreach (var nameSpaceContainer in namespacecontainers)
         AddRoot(nameSpaceContainer);
     }

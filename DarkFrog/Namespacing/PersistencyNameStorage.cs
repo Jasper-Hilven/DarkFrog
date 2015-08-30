@@ -20,7 +20,7 @@ namespace DarkFrog.Namespacing
     private void LoadStorageNames(IPersistencyNameContainer container)
     {
       var name = container.GetPrefix();
-      foreach (var iId in container.GetIIds())
+      foreach (var iId in container.GetPersistencyNamesFromIds())
       {
         AddIId(iId.Value, name + ":" + iId.Key);
       }
@@ -33,6 +33,7 @@ namespace DarkFrog.Namespacing
       LoadStorageNames(new DfList());
       LoadStorageNames(new DfSet());
       LoadStorageNames(new Naming());
+      LoadStorageNames(new Execution.Execution());
     }
 
   }

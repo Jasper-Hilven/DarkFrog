@@ -6,7 +6,7 @@ namespace DarkFrog.Namespacing
 {
   public interface IPersistencyNameContainer
   {
-    Dictionary<string, IId> GetIIds();
+    Dictionary<string, IId> GetPersistencyNamesFromIds();
     string GetPrefix();
   }
 }

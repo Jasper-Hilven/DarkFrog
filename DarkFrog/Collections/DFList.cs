@@ -28,7 +28,7 @@ namespace DarkFrog.Collections
       return list;
     }
 
-    public Dictionary<string, IId> GetIIds()
+    public Dictionary<string, IId> GetPersistencyNamesFromIds()
     {
       return new Dictionary<string, IId>(){{"listId",listId},{"listLength",listLength}};
     }
