@@ -18,7 +18,7 @@ namespace DarkFrog.Namespacing
       id.SetProperty(nameTag,StringId.CreateStringId(name));
     }
 
-    public static IId GetNamedId(string name)
+    public static RefId GetNamedId(string name)
     {
       var retId = new RefId();
       retId.SetProperty(nameTag,StringId.CreateStringId(name));

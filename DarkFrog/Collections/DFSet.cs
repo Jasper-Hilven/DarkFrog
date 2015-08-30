@@ -7,9 +7,9 @@ namespace DarkFrog.Collections
 {
   class DfSet:IPersistencyNameContainer ,INameSpaceContainer
   {
-    private static readonly IId setId = new RefId(); public static IId SetId() { return setId; }
-    private static readonly IId setProperty = new RefId(); public static IId SetProperty() { return setProperty; }
-    private static readonly IId setNs = new RefId(); public static IId SetNs() { return setProperty; }
+    private static readonly IId setId = Naming.GetNamedId("setId"); public static IId SetId() { return setId; }
+    private static readonly IId setProperty = Naming.GetNamedId("setProperty"); public static IId SetProperty() { return setProperty; }
+    private static readonly IId setNs = Naming.GetNamedId("setNs"); public static IId SetNs() { return setProperty; }
 
     public Dictionary<string, IId> GetIIds()
     {

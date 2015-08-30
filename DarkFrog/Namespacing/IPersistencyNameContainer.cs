@@ -8,6 +8,5 @@ namespace DarkFrog.Namespacing
   {
     Dictionary<string, IId> GetIIds();
     string GetPrefix();
-
   }
 }

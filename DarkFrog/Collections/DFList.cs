@@ -1,13 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DarkFrog.Id;
 using DarkFrog.Namespacing;
 
 namespace DarkFrog.Collections
 {
-  public class DfList : IPersistencyNameContainer
+  public class DfList : IPersistencyNameContainer, INameSpaceContainer
   {
-    private static readonly RefId listId = new RefId(); public static RefId ListId() { return listId; }
-    private static readonly RefId listLength = new RefId(); public static RefId ListLength() { return listLength; }
+    private static readonly RefId listId     = Naming.GetNamedId("ListId"); public static RefId ListId() { return listId; }
+    private static readonly RefId listLength = Naming.GetNamedId("ListLength"); public static RefId ListLength() { return listLength; }
+    private static readonly RefId listNs    = Naming.GetNamedId("ListNs"); public static RefId ListNs(){return listNs;}
 
     public static RefId CreateList()
     {
@@ -34,6 +36,13 @@ namespace DarkFrog.Collections
     public string GetPrefix()
     {
       return "DfList";
+    }
+
+    public IEnumerable<Tuple<IId, IId>> GetHierarchy(NameSpaceBuilder builder)
+    {
+      yield return new Tuple<IId, IId>(builder.GetRoot(), listNs);
+      yield return new Tuple<IId, IId>(listNs, listLength);
+      yield return new Tuple<IId, IId>(listNs, listId);
     }
   }
 }

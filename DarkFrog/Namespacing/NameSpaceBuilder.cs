@@ -6,7 +6,7 @@ namespace DarkFrog.Namespacing
 {
   public class NameSpaceBuilder : IPersistencyNameContainer
   {
-    private static readonly IId nsChildren = new RefId(); public static IId NsChildren() { return nsChildren; }
+    private static readonly IId nsChildren = Naming.GetNamedId("NsChildren"); public static IId NsChildren() { return nsChildren; }
 
     public static void AddNameSpaceChild(IId parentId, IId childId)
     {
@@ -20,7 +20,7 @@ namespace DarkFrog.Namespacing
     {
     }
 
-    private readonly IId root = new RefId(); 
+    private readonly IId root = Naming.GetNamedId("root"); 
     
     public IId GetRoot()
     {
@@ -39,7 +39,7 @@ namespace DarkFrog.Namespacing
 
     public void BuildNameSpace()
     {
-      var namespacecontainers = new HashSet<INameSpaceContainer>{new DfSet()};
+      var namespacecontainers = new HashSet<INameSpaceContainer>{new DfSet(),new DfList()};
       foreach (var nameSpaceContainer in namespacecontainers)
         AddRoot(nameSpaceContainer);
     }
