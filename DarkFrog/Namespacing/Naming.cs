@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DarkFrog.Id;
+using DarkFrog.Persistency;
 
 namespace DarkFrog.Namespacing
 {

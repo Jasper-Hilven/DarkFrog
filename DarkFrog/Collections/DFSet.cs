@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using DarkFrog.Id;
 using DarkFrog.Namespacing;
+using DarkFrog.Persistency;
 
 namespace DarkFrog.Collections
 {

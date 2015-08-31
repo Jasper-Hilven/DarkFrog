@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using DarkFrog.Id;
 using DarkFrog.Namespacing;
+using DarkFrog.Persistency;
 
 namespace DarkFrog
 {

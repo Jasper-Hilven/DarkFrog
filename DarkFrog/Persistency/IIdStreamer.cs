@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Runtime.Hosting;
 using DarkFrog.Id;
 
-namespace DarkFrog
+namespace DarkFrog.Persistency
 {
   public class IdStreamer
   {
@@ -27,7 +25,7 @@ namespace DarkFrog
       return streamList;
     }
 
-    private void WriteUniqueNames(Dictionary<string, IId> names, List<String> stream)
+    private void WriteUniqueNames(Dictionary<string, IId> names, List<string> stream)
     {
       stream.AddRange(names.Select(kvp => string.Join("", kvp.Key.Select(c => ((int)c).ToString("X2"))) + " " + kvp.Value.GetStreamDescription()));
       stream.AddRange(names.Select(kvp => kvp.Key + " " + kvp.Value.GetStreamDescription()));
