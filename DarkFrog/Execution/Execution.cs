@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DarkFrog.Id;
 using DarkFrog.Namespacing;
+using DarkFrog.Persistency;
 
 namespace DarkFrog.Execution
 {
@@ -19,7 +17,10 @@ namespace DarkFrog.Execution
                { "ExecutionNs", executionNs }, 
                { "ParameterValues", FunctionCall.ParameterValues() },
                { "FunctionCalled", FunctionCall.FunctionCalled() },
-               { "Parameters", FunctionDefinition.Parameters() }
+               { "Parameters", FunctionDefinition.Parameters() },
+               { "BareParametersList", FunctionDefinition.BareParametersList() },
+               { "SubFunctionCalls", FunctionDefinition.SubFunctionCalls() },
+
              };
     }
 
@@ -30,10 +31,13 @@ namespace DarkFrog.Execution
 
     public IEnumerable<Tuple<IId, IId>> GetHierarchy(NameSpaceBuilder builder)
     {
-      yield return new Tuple<IId, IId>(builder.GetRoot(),executionNs);
-      yield return new Tuple<IId, IId>(executionNs,FunctionCall.ParameterValues());
-      yield return new Tuple<IId, IId>(executionNs,FunctionCall.FunctionCalled());
-      yield return new Tuple<IId, IId>(executionNs,FunctionDefinition.Parameters());
+      yield return new Tuple<IId, IId>(builder.GetRoot(), executionNs);
+      yield return new Tuple<IId, IId>(executionNs, FunctionCall.ParameterValues());
+      yield return new Tuple<IId, IId>(executionNs, FunctionCall.FunctionCalled());
+      yield return new Tuple<IId, IId>(executionNs, FunctionDefinition.Parameters());
+      yield return new Tuple<IId, IId>(executionNs, FunctionDefinition.BareParametersList());
+      yield return new Tuple<IId, IId>(executionNs, FunctionDefinition.SubFunctionCalls());
+
     }
   }
 }

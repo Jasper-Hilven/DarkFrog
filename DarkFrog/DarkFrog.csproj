@@ -61,12 +61,12 @@
     <Compile Include="Id\IId.cs" />
     <Compile Include="Id\IntId.cs" />
     <Compile Include="Id\RefId.cs" />
-    <Compile Include="IIdStreamer.cs" />
     <Compile Include="Namespacing\NameSpaceBuilder.cs" />
     <Compile Include="Namespacing\INameSpaceContainer.cs" />
-    <Compile Include="Namespacing\IPersistencyNameContainer.cs" />
     <Compile Include="Namespacing\Naming.cs" />
-    <Compile Include="Namespacing\PersistencyNameStorage.cs" />
+    <Compile Include="Persistency\IIdStreamer.cs" />
+    <Compile Include="Persistency\IPersistencyNameContainer.cs" />
+    <Compile Include="Persistency\PersistencyNameStorage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

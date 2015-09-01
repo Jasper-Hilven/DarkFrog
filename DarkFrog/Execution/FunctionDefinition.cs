@@ -12,6 +12,7 @@ namespace DarkFrog.Execution
   {
     private static readonly IId parameters = Naming.GetNamedId("parameters"); public static IId Parameters() { return parameters; }
     private static readonly IId subFunctionCalls = Naming.GetNamedId("SubFunctionCalls"); public static IId SubFunctionCalls(){return subFunctionCalls;}
+    private static readonly IId bareParametersList = Naming.GetNamedId("BareParameterList"); public static IId BareParametersList(){return bareParametersList;}
     public static IId getCombinedFunctionDefinition(IId parameterSet, IId functionCallList)
     {
       var ret = new RefId();
@@ -25,5 +26,14 @@ namespace DarkFrog.Execution
       Naming.GiveNameToIId(name,ret);
       return ret;
     }
+
+    public static IId getBareFunctionDefinition<T>(IId parameterList)
+    {
+      var ret = new RefId();
+      ret.SetProperty(bareParametersList,parameterList);
+      //Todo morf&duplicate list to duplicate set to ensure speed optimization
+      return ret;
+    }
+
   }
 }
