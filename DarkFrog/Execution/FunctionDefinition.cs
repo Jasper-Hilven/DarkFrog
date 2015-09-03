@@ -26,14 +26,5 @@ namespace DarkFrog.Execution
       Naming.GiveNameToIId(name,ret);
       return ret;
     }
-
-    public static IId getBareFunctionDefinition<T>(IId parameterList)
-    {
-      var ret = RefId.CreateRefId();
-      ret.SetProperty(bareParametersList,parameterList);
-      //Todo morf&duplicate list to duplicate set to ensure speed optimization
-      return ret;
-    }
-
   }
 }

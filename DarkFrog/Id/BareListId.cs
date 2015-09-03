@@ -66,7 +66,6 @@ namespace DarkFrog.Id
       if(!( pVal >= 0 && pVal <= list.Count))
         throw new Exception();
       list[pVal] = value;
-      throw new NotImplementedException();
     }
 
     public void RemoveProperty(IId property)
