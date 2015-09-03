@@ -9,12 +9,11 @@ namespace DarkFrog.Collections
   class DfSet:IPersistencyNameContainer ,INameSpaceContainer
   {
     private static readonly IId setId = Naming.GetNamedId("setId"); public static IId SetId() { return setId; }
-    private static readonly IId setProperty = Naming.GetNamedId("setProperty"); public static IId SetProperty() { return setProperty; }
-    private static readonly IId setNs = Naming.GetNamedId("setNs"); public static IId SetNs() { return setProperty; }
+    private static readonly IId setNs = Naming.GetNamedId("setNs"); public static IId SetNs() { return setNs; }
 
     public Dictionary<string, IId> GetPersistencyNamesFromIds()
     {
-      return new Dictionary<string, IId>(){{"DfSetId",setId},{"DfSetProperty", setProperty},{"setNs", setNs} };
+      return new Dictionary<string, IId>(){{"DfSetId",setId},{"setNs", setNs} };
     }
 
     public static IId CreateSet()
@@ -28,7 +27,7 @@ namespace DarkFrog.Collections
       var rawSet = BareSetId.CreateBareSetId();
       set.SetProperty(setId,rawSet);
       foreach (var value in values)
-        set.SetProperty(value,setProperty);
+        set.SetProperty(value, value);
       return set;
     }
 
@@ -40,7 +39,7 @@ namespace DarkFrog.Collections
     public static void AddToSet(IId set,IId value)
     {
       var rawId = set.GetProperty(setId);
-      rawId.SetProperty(value,setProperty);
+      rawId.SetProperty(value,value);
     }
 
     public string GetPrefix()
@@ -51,7 +50,6 @@ namespace DarkFrog.Collections
     public IEnumerable<Tuple<IId, IId>> GetHierarchy(NameSpaceBuilder builder)
     {
       yield return new Tuple<IId, IId>(builder.GetRoot(),setNs);
-      yield return new Tuple<IId, IId>(setNs, setProperty);
       yield return new Tuple<IId, IId>(setNs, setId);
     }
   }

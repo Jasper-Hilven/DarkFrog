@@ -14,6 +14,11 @@ namespace DarkFrog.Id
       id = stID++;
     }
 
+    public static BareListId CreateBareListId()
+    {
+      return new BareListId();
+    }
+
     private List<IId> list = new List<IId>(); 
     public IEnumerable<IId> GetProperties()
     {
