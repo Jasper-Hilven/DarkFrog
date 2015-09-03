@@ -7,12 +7,12 @@ namespace DarkFrog.Id
   {
     private static IntId zero = new IntId(0);
     private static IntId one = new IntId(1);
-    private int value;
+    public int Value { get; private set; }
 
 
     private IntId(int value)
     {
-      this.value = value;
+      this.Value = value;
     }
 
     public static IntId CreateId(int number)
