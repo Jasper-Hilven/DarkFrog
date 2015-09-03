@@ -1,41 +1,52 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace DarkFrog.Id
 {
   public abstract class BareFunctionId : IId
   {
+    private static long stID = 0;
+    private long id;
+
     protected BareFunctionId()
     {
+      id = stID++;
     }
+    public BareListId BareParametersList { get; private set; } 
+
+    public abstract IId Execute(RefId parameters);
 
     public IEnumerable<IId> GetProperties()
     {
-      throw new System.NotImplementedException();
+      yield return Execution.FunctionDefinition.BareParametersList();
     }
 
     public IEnumerable<IId> GetPropertiesAndValues()
     {
-      throw new System.NotImplementedException();
+      yield return Execution.FunctionDefinition.BareParametersList();
+      yield return BareParametersList;
     }
 
     public bool ContainsProperty(IId property)
     {
-      throw new System.NotImplementedException();
+      return property.Equals(Execution.FunctionDefinition.BareParametersList());
     }
 
     public IId GetProperty(IId property)
     {
-      throw new System.NotImplementedException();
+      if (!ContainsProperty(property))
+        throw new Exception();
+      return BareParametersList;
     }
 
     public void SetProperty(IId property, IId value)
     {
-      throw new System.NotImplementedException();
+        throw new Exception();
     }
 
     public void RemoveProperty(IId property)
     {
-      throw new System.NotImplementedException();
+      throw new Exception();
     }
 
     public bool IsRefIId()
@@ -45,12 +56,12 @@ namespace DarkFrog.Id
 
     public string GetStreamDescription()
     {
-      throw new System.NotImplementedException();
+      return "BF" + id;
     }
 
     public string GetFullPropertyDescription()
     {
-      throw new System.NotImplementedException();
+      return GetStreamDescription();
     }
   }
 }

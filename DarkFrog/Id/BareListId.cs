@@ -4,10 +4,15 @@ using System.Text;
 
 namespace DarkFrog.Id
 {
-  class BareListId:IId
+  public class BareListId:IId
   {
     private static long stID = 0;
     private long id;
+
+    private BareListId()
+    {
+      id = stID++;
+    }
 
     private List<IId> list = new List<IId>(); 
     public IEnumerable<IId> GetProperties()
