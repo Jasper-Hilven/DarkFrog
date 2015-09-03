@@ -8,49 +8,63 @@ namespace DarkFrog.Id
 {
   class BareSetId:IId
   {
+    private static long stID = 0;
+    private long id;
+
+    private BareSetId()
+    {
+      this.id = stID++;
+    }
+
+    private HashSet<IId> set = new HashSet<IId>(); 
     public IEnumerable<IId> GetProperties()
     {
-      throw new NotImplementedException();
+      return set.ToList();
     }
 
     public IEnumerable<IId> GetPropertiesAndValues()
     {
-      throw new NotImplementedException();
+      return set.ToList();
     }
 
     public bool ContainsProperty(IId property)
     {
-      throw new NotImplementedException();
+      return set.Contains(property);
     }
 
     public IId GetProperty(IId property)
     {
-      throw new NotImplementedException();
+      if(!set.Contains(property))
+        throw new Exception();
+      return property;
     }
 
     public void SetProperty(IId property, IId value)
     {
-      throw new NotImplementedException();
+      set.Add(property);
     }
 
     public void RemoveProperty(IId property)
     {
-      throw new NotImplementedException();
+      set.Remove(property);
     }
 
     public bool IsRefIId()
     {
-      throw new NotImplementedException();
+      return false;
     }
 
     public string GetStreamDescription()
     {
-      throw new NotImplementedException();
+      return "BS" + id + " ";
     }
 
     public string GetFullPropertyDescription()
     {
-      throw new NotImplementedException();
+      var ret = new StringBuilder(GetStreamDescription());
+      foreach (var kp in set)
+        ret.Append(kp.GetStreamDescription());
+      return ret.ToString();
     }
   }
 }
