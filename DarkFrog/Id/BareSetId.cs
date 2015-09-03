@@ -15,6 +15,11 @@ namespace DarkFrog.Id
       this.id = stID++;
     }
 
+    public static BareSetId CreateBareSetId()
+    {
+      return new BareSetId();
+    }
+
     private HashSet<IId> set = new HashSet<IId>(); 
     public IEnumerable<IId> GetProperties()
     {

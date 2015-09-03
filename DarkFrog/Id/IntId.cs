@@ -60,7 +60,7 @@ namespace DarkFrog.Id
 
     public string GetStreamDescription()
     {
-      return "I" + value;
+      return "I" + Value;
     }
 
     public string GetFullPropertyDescription()
