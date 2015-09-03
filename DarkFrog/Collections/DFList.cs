@@ -18,8 +18,8 @@ namespace DarkFrog.Collections
     }
     public static RefId CreateList(IId[] elements)
     {
-      var list = new RefId();
-      var rawList = new RefId();
+      var list = RefId.CreateRefId();
+      var rawList = new BareListId();
       list.SetProperty(listId, rawList);
       rawList.SetProperty(listLength, IntId.CreateId(elements.Length));
       for (int i = 0; i < elements.Length; i++)

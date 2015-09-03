@@ -16,7 +16,7 @@ namespace DarkFrog.Persistency
 
     public IEnumerable<string> StreamAllIIds()
     {
-      var isStreaming = new RefId();
+      var isStreaming = RefId.CreateRefId();
       var streamList = new List<string>(){"IID"};
       AddIdAndMark(environment.GetRoot(),streamList,isStreaming);
       UnMark(environment.GetRoot(),isStreaming);
@@ -62,7 +62,7 @@ namespace DarkFrog.Persistency
     {
       if (environment.NameToId.ContainsKey(uniqueName))
         throw new Exception();
-      var ret = new RefId();
+      var ret = RefId.CreateRefId();
       environment.NameToId.Add(uniqueName, ret);
       return ret;
     }

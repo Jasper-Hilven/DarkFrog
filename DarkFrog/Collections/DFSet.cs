@@ -24,8 +24,8 @@ namespace DarkFrog.Collections
 
     public static IId CreateSet(ISet<IId> values)
     {
-      var set = new RefId();
-      var rawSet = new RefId();
+      var set = RefId.CreateRefId();
+      var rawSet = new BareSetId();
       set.SetProperty(setId,rawSet);
       foreach (var value in values)
         set.SetProperty(value,setProperty);

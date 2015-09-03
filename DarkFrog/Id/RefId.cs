@@ -11,12 +11,15 @@ namespace DarkFrog.Id
     private long id;
       //this id is only used for serialization. The unique pointer is used as real id when the environment is loaded
 
-    public RefId()
+    private RefId()
     {
       this.id = stID++;
     }
 
-
+    public static RefId CreateRefId()
+    {
+      return new RefId();
+    }
     public IEnumerable<IId> GetProperties()
     {
       return values.Keys;

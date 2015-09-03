@@ -7,7 +7,7 @@ namespace DarkFrog.Namespacing
 {
   class Naming:IPersistencyNameContainer
   {
-    private static readonly IId nameTag = new RefId(); public IId NameTag() { return nameTag; }
+    private static readonly IId nameTag = RefId.CreateRefId(); public IId NameTag() { return nameTag; }
 
     public static void GiveNameToIId(string name, IId id)
     {
@@ -18,7 +18,7 @@ namespace DarkFrog.Namespacing
 
     public static RefId GetNamedId(string name)
     {
-      var retId = new RefId();
+      var retId = RefId.CreateRefId();
       retId.SetProperty(nameTag,StringId.CreateStringId(name));
       return retId;
     }

@@ -15,7 +15,7 @@ namespace DarkFrog.Execution
 
     public static IId GetFunctionCall(IId valueDictionary, IId callee)
     {
-      var ret = new RefId();
+      var ret = RefId.CreateRefId();
       ret.SetProperty(parameterValues,valueDictionary);
       ret.SetProperty(functionCalled,callee);
       return ret;
