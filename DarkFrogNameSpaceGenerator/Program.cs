@@ -10,6 +10,9 @@ namespace DarkFrogNameSpaceGenerator
   {
     static void Main(string[] args)
     {
+      var root = DarkFrogNameSpaceData.NameSpaceDataBuilder.GetRoot();
+      var path = "";
+
     }
 
   }

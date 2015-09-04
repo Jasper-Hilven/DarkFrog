@@ -2,7 +2,7 @@
 
 namespace DarkFrogNameSpaceData
 {
-  class NameSpaceDataBuilder
+  public class NameSpaceDataBuilder
   {
     private static readonly IEnumerable<NameSpaceHierarchyNode> emptyChildren = new List<NameSpaceHierarchyNode>();
     private static readonly IEnumerable<NameSpaceHierarchyBareFunction> emptyElements = new List<NameSpaceHierarchyBareFunction>();

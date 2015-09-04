@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DarkFrogNameSpaceData
 {
-  class NameSpaceHierarchyBareFunction
+  public class NameSpaceHierarchyBareFunction
   {
     public string name{get;set;}
     public List<NameSpaceFunctionType> InputTypes{get;set;}

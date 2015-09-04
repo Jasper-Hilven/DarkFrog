@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DarkFrogNameSpaceData
 {
-  class NameSpaceHierarchyNode
+  public class NameSpaceHierarchyNode
   {
     public IEnumerable<NameSpaceHierarchyNode> Children { get; set; }
     public IEnumerable<NameSpaceHierarchyBareFunction> Elements { get; set; }

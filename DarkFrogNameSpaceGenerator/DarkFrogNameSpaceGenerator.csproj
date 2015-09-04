@@ -47,6 +47,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DarkFrogNameSpaceData\DarkFrogNameSpaceData.csproj">
+      <Project>{5a05536c-34fc-47aa-b8e8-d1a9b3819624}</Project>
+      <Name>DarkFrogNameSpaceData</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
