@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using DarkFrog.Collections;
-using DarkFrog.Id;
-using DarkFrog.Persistency;
+using DarkFrog.Core.Collections;
+using DarkFrog.Core.Id;
+using DarkFrog.Core.Persistency;
 
-namespace DarkFrog.Namespacing
+namespace DarkFrog.Core.Namespacing
 {
   public class NameSpaceBuilder : IPersistencyNameContainer
   {

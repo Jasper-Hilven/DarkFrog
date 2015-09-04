@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DarkFrog.Id
+namespace DarkFrog.Core.Id
 {
   public class BareListId:IId
   {

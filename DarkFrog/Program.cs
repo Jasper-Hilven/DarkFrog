@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DarkFrog.Core;
+using Environment = DarkFrog.Core.Environment;
 
 namespace DarkFrog
 {

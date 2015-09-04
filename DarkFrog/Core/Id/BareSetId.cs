@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace DarkFrog.Id
+namespace DarkFrog.Core.Id
 {
   class BareSetId:IId
   {

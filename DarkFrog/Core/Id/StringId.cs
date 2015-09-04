@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace DarkFrog.Id
+namespace DarkFrog.Core.Id
 {
   public class StringId:IId
   {

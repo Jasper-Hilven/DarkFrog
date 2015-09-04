@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DarkFrog.Id
+namespace DarkFrog.Core.Id
 {
   public class IntId : IId
   {

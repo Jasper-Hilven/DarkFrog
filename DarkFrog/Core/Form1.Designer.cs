@@ -1,4 +1,4 @@
-﻿namespace DarkFrog
+﻿namespace DarkFrog.Core
 {
   partial class Form1
   {

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using DarkFrog.Id;
-using DarkFrog.Persistency;
+using DarkFrog.Core.Id;
+using DarkFrog.Core.Persistency;
 
-namespace DarkFrog.Namespacing
+namespace DarkFrog.Core.Namespacing
 {
   class Naming:IPersistencyNameContainer
   {

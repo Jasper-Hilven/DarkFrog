@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using DarkFrog.Id;
+using DarkFrog.Core.Id;
 
-namespace DarkFrog.Persistency
+namespace DarkFrog.Core.Persistency
 {
   public interface IPersistencyNameContainer
   {

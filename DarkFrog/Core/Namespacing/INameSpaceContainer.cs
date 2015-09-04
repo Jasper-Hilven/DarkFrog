@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using DarkFrog.Id;
+using DarkFrog.Core.Id;
 
-namespace DarkFrog.Namespacing
+namespace DarkFrog.Core.Namespacing
 {
   public interface INameSpaceContainer
   {

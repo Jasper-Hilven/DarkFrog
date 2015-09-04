@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using DarkFrog.Core.Execution;
 
-namespace DarkFrog.Id
+namespace DarkFrog.Core.Id
 {
   public abstract class BareFunctionId : IId
   {
@@ -18,18 +19,18 @@ namespace DarkFrog.Id
 
     public IEnumerable<IId> GetProperties()
     {
-      yield return Execution.FunctionDefinition.BareParametersList();
+      yield return FunctionDefinition.BareParametersList();
     }
 
     public IEnumerable<IId> GetPropertiesAndValues()
     {
-      yield return Execution.FunctionDefinition.BareParametersList();
+      yield return FunctionDefinition.BareParametersList();
       yield return BareParametersList;
     }
 
     public bool ContainsProperty(IId property)
     {
-      return property.Equals(Execution.FunctionDefinition.BareParametersList());
+      return property.Equals(FunctionDefinition.BareParametersList());
     }
 
     public IId GetProperty(IId property)

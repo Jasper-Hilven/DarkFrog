@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DarkFrog.Id;
-using DarkFrog.Namespacing;
+﻿using DarkFrog.Core.Id;
+using DarkFrog.Core.Namespacing;
 
-namespace DarkFrog.Execution
+namespace DarkFrog.Core.Execution
 {
   class FunctionDefinition
   {

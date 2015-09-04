@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using DarkFrog.Id;
+using DarkFrog.Core.Id;
 
-namespace DarkFrog.Persistency
+namespace DarkFrog.Core.Persistency
 {
   public class IdStreamer
   {

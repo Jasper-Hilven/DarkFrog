@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using DarkFrog.Id;
-using DarkFrog.Namespacing;
-using DarkFrog.Persistency;
+using DarkFrog.Core.Id;
+using DarkFrog.Core.Namespacing;
+using DarkFrog.Core.Persistency;
 
-namespace DarkFrog
+namespace DarkFrog.Core
 {
   //Contains all variables and the loading and disloading of it
   public class Environment

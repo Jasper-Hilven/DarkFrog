@@ -1,8 +1,8 @@
-﻿using DarkFrog.Collections;
-using DarkFrog.Id;
-using DarkFrog.Namespacing;
+﻿using DarkFrog.Core.Collections;
+using DarkFrog.Core.Id;
+using DarkFrog.Core.Namespacing;
 
-namespace DarkFrog.Persistency
+namespace DarkFrog.Core.Persistency
 {
   public class PersistencyNameStorage 
   {

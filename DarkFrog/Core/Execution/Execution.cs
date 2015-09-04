@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using DarkFrog.Id;
-using DarkFrog.Namespacing;
-using DarkFrog.Persistency;
+using DarkFrog.Core.Id;
+using DarkFrog.Core.Namespacing;
+using DarkFrog.Core.Persistency;
 
-namespace DarkFrog.Execution
+namespace DarkFrog.Core.Execution
 {
   class Execution : IPersistencyNameContainer, INameSpaceContainer
   {
