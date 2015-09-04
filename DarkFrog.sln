@@ -3,6 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkFrog", "DarkFrog\DarkFrog.csproj", "{121FB49B-9415-44D6-9D12-908E83F3CA93}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkFrogNameSpaceGenerator", "DarkFrogNameSpaceGenerator\DarkFrogNameSpaceGenerator.csproj", "{F7E7FA32-4C94-44A6-83C0-6D02BC9F7F3D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5A05536C-34FC-47AA-B8E8-D1A9B3819624} = {5A05536C-34FC-47AA-B8E8-D1A9B3819624}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkFrogNameSpaceData", "DarkFrogNameSpaceData\DarkFrogNameSpaceData.csproj", "{5A05536C-34FC-47AA-B8E8-D1A9B3819624}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +20,14 @@ Global
 		{121FB49B-9415-44D6-9D12-908E83F3CA93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{121FB49B-9415-44D6-9D12-908E83F3CA93}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{121FB49B-9415-44D6-9D12-908E83F3CA93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7E7FA32-4C94-44A6-83C0-6D02BC9F7F3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7E7FA32-4C94-44A6-83C0-6D02BC9F7F3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7E7FA32-4C94-44A6-83C0-6D02BC9F7F3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7E7FA32-4C94-44A6-83C0-6D02BC9F7F3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A05536C-34FC-47AA-B8E8-D1A9B3819624}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A05536C-34FC-47AA-B8E8-D1A9B3819624}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A05536C-34FC-47AA-B8E8-D1A9B3819624}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A05536C-34FC-47AA-B8E8-D1A9B3819624}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
