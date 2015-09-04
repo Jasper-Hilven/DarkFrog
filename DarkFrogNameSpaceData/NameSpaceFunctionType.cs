@@ -9,6 +9,8 @@ namespace DarkFrogNameSpaceData
   public class NameSpaceFunctionType
   {
     public static NameSpaceFunctionType IntType = new NameSpaceFunctionType();
+    public static NameSpaceFunctionType BoolType = new NameSpaceFunctionType();
+    public static NameSpaceFunctionType IIdType = new NameSpaceFunctionType();
   }
   
 }

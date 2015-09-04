@@ -44,35 +44,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Collections\DFList.cs" />
-    <Compile Include="Collections\DFSet.cs" />
-    <Compile Include="Environment.cs" />
-    <Compile Include="Execution\Execution.cs" />
-    <Compile Include="Execution\FunctionDefinition.cs" />
-    <Compile Include="Execution\FunctionCall.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Core\Collections\DFList.cs" />
+    <Compile Include="Core\Collections\DFSet.cs" />
+    <Compile Include="Core\Environment.cs" />
+    <Compile Include="Core\Execution\Execution.cs" />
+    <Compile Include="Core\Execution\FunctionCall.cs" />
+    <Compile Include="Core\Execution\FunctionDefinition.cs" />
+    <Compile Include="Core\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Core\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Id\BareFunctionId.cs" />
-    <Compile Include="Id\BareListId.cs" />
-    <Compile Include="Id\BareSetId.cs" />
-    <Compile Include="Id\BoolId.cs" />
-    <Compile Include="Id\StringId.cs" />
-    <Compile Include="Id\IId.cs" />
-    <Compile Include="Id\IntId.cs" />
-    <Compile Include="Id\RefId.cs" />
-    <Compile Include="Namespacing\NameSpaceBuilder.cs" />
-    <Compile Include="Namespacing\INameSpaceContainer.cs" />
-    <Compile Include="Namespacing\Naming.cs" />
-    <Compile Include="Persistency\IIdStreamer.cs" />
-    <Compile Include="Persistency\IPersistencyNameContainer.cs" />
-    <Compile Include="Persistency\PersistencyNameStorage.cs" />
+    <Compile Include="Core\Id\BareFunctionId.cs" />
+    <Compile Include="Core\Id\BareListId.cs" />
+    <Compile Include="Core\Id\BareSetId.cs" />
+    <Compile Include="Core\Id\BoolId.cs" />
+    <Compile Include="Core\Id\IId.cs" />
+    <Compile Include="Core\Id\IntId.cs" />
+    <Compile Include="Core\Id\RefId.cs" />
+    <Compile Include="Core\Id\StringId.cs" />
+    <Compile Include="Core\Namespacing\INameSpaceContainer.cs" />
+    <Compile Include="Core\Namespacing\NameSpaceBuilder.cs" />
+    <Compile Include="Core\Namespacing\Naming.cs" />
+    <Compile Include="Core\Persistency\IIdStreamer.cs" />
+    <Compile Include="Core\Persistency\IPersistencyNameContainer.cs" />
+    <Compile Include="Core\Persistency\PersistencyNameStorage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="Core\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -98,8 +98,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Core\" />
-    <Folder Include="HierarchyGenData\" />
     <Folder Include="Hierarchy\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

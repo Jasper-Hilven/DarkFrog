@@ -11,13 +11,25 @@ namespace DarkFrogNameSpaceData
     private static readonly IEnumerable<NameSpaceHierarchyNode> emptyChildren = new List<NameSpaceHierarchyNode>();
     private static readonly IEnumerable<NameSpaceHierarchyBareFunction> emptyElements = new List<NameSpaceHierarchyBareFunction>();
     private static readonly NameSpaceFunctionType intType = NameSpaceFunctionType.IntType;
+    private static readonly NameSpaceFunctionType boolType = NameSpaceFunctionType.BoolType;
+    private static readonly NameSpaceFunctionType iidType = NameSpaceFunctionType.IIdType;
+
     public static NameSpaceHierarchyNode getRoot()
     {
-      var root = new NameSpaceHierarchyNode() { Name = "Root", Elements = emptyElements, Children = new List<NameSpaceHierarchyNode>() { GetIntHierarchy() } };
+      var root = new NameSpaceHierarchyNode() { Name = "Root", Elements = emptyElements, Children = new List<NameSpaceHierarchyNode>() { GetIntHierarchy() ,GetExecutionHierarchy()} };
       return root;
 
 
     }
+
+    public static NameSpaceHierarchyNode GetExecutionHierarchy()
+    {
+      var ifcall = new NameSpaceHierarchyBareFunction(){BareCSharpCode = "if(P0) then {R = P1;} else {R = P2;}",InputTypes =  new List<NameSpaceFunctionType>(){boolType,iidType,iidType},name = "if",returnType = iidType}
+      
+      var executionRoot = new NameSpaceHierarchyNode(){Name = "Execution",Children = emptyChildren,Elements = new List<NameSpaceHierarchyBareFunction>(){}};
+      return executionRoot;
+    }
+
     public static NameSpaceHierarchyNode GetIntHierarchy()
     {
       var sumFunction = new NameSpaceHierarchyBareFunction() { BareCSharpCode = "R = P0 + P1;", InputTypes = new List<NameSpaceFunctionType>() { intType, intType }, name = "+", returnType = intType };
