@@ -10,3 +10,11 @@ Finished Environment structure.
 Finished naming and namespacing.
 
 Working on the implementation of the first execution model
+
+
+###FAQ
+- Is this just another visual programming language?
+  No, the difference between this type of programming and other visual programming languages is that you can manipulate the code by code easily.
+  
+- I still don't get it.
+  Feel free to contact me at jasperhilven@gmail.com. You are welcome to participate to this project.
